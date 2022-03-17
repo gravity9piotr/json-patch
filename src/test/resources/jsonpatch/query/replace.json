@@ -201,6 +201,96 @@
           }
         ]
       }
+    },
+    {
+      "description": "TMF630 - Example 7 - Replacing an attribute from one of the components of a complex array (resolving ambiguities)",
+      "op": {
+        "op": "replace",
+        "path": "/orderItem/product/relatedParty/role?orderItem&relatedParty.name=='Mary'",
+        "value": "manager"
+      },
+      "node": {
+        "id": "3774",
+        "description": "This product order covers ... ",
+        "requestedCompletionDate": "2017-07-14",
+        "orderItem": [
+          {
+            "action": "add ",
+            "quantity": 1,
+            "productOffering": {
+              "href": "/productOffering/1513",
+              "id": "1513",
+              "name": "Offer Good Plan"
+            },
+            "product": {
+              "relatedParty": [
+                {
+                  "name": "Mary",
+                  "role": "customer"
+                }
+              ]
+            }
+          },
+          {
+            "action": "add ",
+            "quantity": 1,
+            "productOffering": {
+              "href": "/productOffering/1513",
+              "id": "1513",
+              "name": "Offer Good Plan"
+            },
+            "product": {
+              "relatedParty": [
+                {
+                  "name": "John",
+                  "role": "customer"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "expected": {
+        "id": "3774",
+        "description": "This product order covers ... ",
+        "requestedCompletionDate": "2017-07-14",
+        "orderItem": [
+          {
+            "action": "add ",
+            "quantity": 1,
+            "productOffering": {
+              "href": "/productOffering/1513",
+              "id": "1513",
+              "name": "Offer Good Plan"
+            },
+            "product": {
+              "relatedParty": [
+                {
+                  "name": "Mary",
+                  "role": "manager"
+                }
+              ]
+            }
+          },
+          {
+            "action": "add ",
+            "quantity": 1,
+            "productOffering": {
+              "href": "/productOffering/1513",
+              "id": "1513",
+              "name": "Offer Good Plan"
+            },
+            "product": {
+              "relatedParty": [
+                {
+                  "name": "John",
+                  "role": "customer"
+                }
+              ]
+            }
+          }
+        ]
+      }
     }
   ]
 }

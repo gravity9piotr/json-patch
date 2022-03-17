@@ -60,7 +60,7 @@
     {
       "op": {
         "op": "add",
-        "path": "/note/text?note.verified=true|note.verified=false",
+        "path": "/note/text?note.author=Arthur Evans&note.verified=false",
         "value": "Informed"
       },
       "node": {
@@ -92,8 +92,7 @@
           {
             "verified": true,
             "date": "2013-07-25T08:55:12.0Z",
-            "author": "John Doe",
-            "text": "Informed"
+            "author": "John Doe"
           }
         ]
       }
